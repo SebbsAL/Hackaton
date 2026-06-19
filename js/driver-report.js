@@ -9,7 +9,7 @@ class DriverReportForm extends HTMLElement {
         this.driverName = "Juan Diego León";
         this.driverId = this.generateDeterministicDriverId(this.driverName);
         this.currentCoords = null;
-        this.n8nWebhookUrl = 'https://emperor-visa-jigsaw.ngrok-free.dev/webhook-test/reporte';
+        this.n8nWebhookUrl = 'https://hackaton2026.app.n8n.cloud/webhook/reporte';
     }
 
     connectedCallback() {

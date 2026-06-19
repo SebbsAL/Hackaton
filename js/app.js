@@ -8,7 +8,7 @@ class ReportForm extends HTMLElement {
         this.map = null;
         this.marker = null;
         this.attachedPhotos = [];
-        this.n8nWebhookUrl = 'https://hackaton2026.app.n8n.cloud/webhook-test/reporte';
+        this.n8nWebhookUrl = 'https://hackaton2026.app.n8n.cloud/webhook/reporte';
     }
 
     connectedCallback() {
