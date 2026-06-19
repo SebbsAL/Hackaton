@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Reportes y Afectaciones</title>
+    <!-- Estilos globales compartidos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Estilos específicos del dashboard -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Leaflet CSS y JS (API de mapas 100% gratuita y libre) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+    <!-- Componente del Dashboard (Llama al Webhook de n8n en tiempo real) -->
+    <dashboard-view></dashboard-view>
+    
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

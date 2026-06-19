@@ -1,0 +1,487 @@
+/* css/styles.css */
+:root {
+    --bg-primary: #0f1117;
+    --bg-secondary: #1a1d27;
+    --bg-tertiary: #242836;
+    --text-primary: #e8eaed;
+    --text-secondary: #b0b3b8;
+    --text-muted: #7c8088;
+    --accent: #5b8cce;
+    --accent-hover: #7aa8e0;
+    --accent-subtle: rgba(91, 140, 206, 0.12);
+    --border: #2d3140;
+    --border-focus: #5b8cce;
+    --error: #e05d5d;
+    --success: #4caf84;
+    --warning: #d4a853;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --radius-sm: 6px;
+    --radius: 10px;
+    --radius-lg: 14px;
+    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
+    --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --focus-ring: 0 0 0 3px rgba(91, 140, 206, 0.45);
+}
+
+/* Modo alto contraste */
+body.high-contrast {
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #141414;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-muted: #b0b0b0;
+    --accent: #ffcc00;
+    --accent-hover: #ffe066;
+    --accent-subtle: rgba(255, 204, 0, 0.2);
+    --border: #ffffff;
+    --border-focus: #ffcc00;
+    --error: #ff6b6b;
+    --success: #50fa7b;
+    --focus-ring: 0 0 0 4px #ffcc00;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---- WEB COMPONENT: report-form ---- */
+report-form {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 2rem 2rem 2.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.form-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.form-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Secciones */
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.8rem;
+    background: var(--bg-tertiary);
+}
+
+legend {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+    padding: 0 0.6rem;
+    letter-spacing: 0.01em;
+}
+
+/* Grid de campos */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.form-grid.col-1 {
+    grid-template-columns: 1fr;
+}
+
+.form-grid.col-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 600px) {
+    .form-grid,
+    .form-grid.col-3 {
+        grid-template-columns: 1fr;
+    }
+    report-form {
+        padding: 1.2rem;
+    }
+}
+
+/* Grupos de campo */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.01em;
+}
+
+.form-group label .required {
+    color: var(--error);
+    margin-left: 0.15rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    font-family: var(--font);
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    transition: border var(--transition), box-shadow var(--transition);
+    resize: vertical;
+    min-height: 42px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: var(--focus-ring);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group textarea {
+    min-height: 90px;
+}
+
+.form-group .error-msg {
+    font-size: 0.8rem;
+    color: var(--error);
+    min-height: 1.1em;
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.form-group.error .error-msg {
+    opacity: 1;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: var(--error);
+}
+
+/* Checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.55rem 0.7rem;
+    background: var(--bg-primary);
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background var(--transition), border var(--transition);
+}
+
+.checkbox-item:hover {
+    background: var(--accent-subtle);
+    border-color: var(--accent);
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-top: 0.2rem;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-item label {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+/* Mapa */
+.map-container {
+    width: 100%;
+    height: 350px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    background: var(--bg-primary);
+    margin: 0.5rem 0 1rem;
+}
+
+.map-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.coord-buttons {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.6rem;
+}
+
+/* Botones */
+.btn {
+    font-family: var(--font);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.65rem 1.3rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition);
+    border: 1px solid transparent;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn-secondary:hover {
+    background: var(--accent-subtle);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border-color: var(--border);
+}
+
+.btn-ghost:hover {
+    background: var(--bg-tertiary);
+}
+
+.btn-danger {
+    background: var(--error);
+    color: #fff;
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-lg {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+}
+
+/* File upload */
+.file-upload-area {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border var(--transition), background var(--transition);
+    background: var(--bg-primary);
+}
+
+.file-upload-area:hover,
+.file-upload-area.drag-over {
+    border-color: var(--accent);
+    background: var(--accent-subtle);
+}
+
+.file-upload-area input {
+    display: none;
+}
+
+.file-upload-area .icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.file-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+}
+
+.file-preview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+/* Barra de herramientas */
+.toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.toggle-contrast {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(120px);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    padding: 0.9rem 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+}
+
+.toast.visible {
+    transform: translateX(-50%) translateY(0);
+}
+
+.toast.success {
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.toast.error {
+    border-color: var(--error);
+    color: var(--error);
+}
+
+/* Spinner */
+.spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    report-form {
+        padding: 1rem;
+        border-radius: var(--radius);
+    }
+    .form-header h1 {
+        font-size: 1.35rem;
+    }
+    .map-container {
+        height: 220px;
+    }
+}
+
+/* Personalización de Leaflet para tema oscuro premium */
+.leaflet-bar {
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow) !important;
+}
+.leaflet-bar a {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid var(--border) !important;
+    transition: background var(--transition) !important;
+}
+.leaflet-bar a:hover {
+    background-color: var(--accent-subtle) !important;
+    color: var(--accent) !important;
+}
+.leaflet-bar a.leaflet-disabled {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-muted) !important;
+}
+.leaflet-container {
+    background-color: var(--bg-primary) !important;
+    font-family: var(--font) !important;
+}
