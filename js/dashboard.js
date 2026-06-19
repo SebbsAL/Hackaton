@@ -36,7 +36,7 @@ class DashboardView extends HTMLElement {
             <!-- Cabecera del Dashboard -->
             <div class="db-header">
                 <div class="db-title">
-                    <h1>📊 Dashboard de Gestión de Reportes</h1>
+                    <h1> Dashboard de Gestión de Reportes</h1>
                     <p>Monitoreo en tiempo real de afectaciones y daños reportados</p>
                 </div>
                 <div class="api-actions" style="display: flex; gap: 0.8rem; align-items: center;">
