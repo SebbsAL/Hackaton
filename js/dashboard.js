@@ -17,7 +17,7 @@ class DashboardView extends HTMLElement {
         this.searchQuery = '';
         
         // URL del Webhook de n8n fija (Modo Producción)
-        this.n8nUrl = 'https://yapping-childless-baggage.ngrok-free.dev/webhook/gestion';
+        this.n8nUrl = 'https://hackaton2026.app.n8n.cloud/webhook-test/gestion';
 
         // Referencias de Mapa Leaflet
         this.detailMap = null;
@@ -391,7 +391,7 @@ class DashboardView extends HTMLElement {
                     else if (sev === 'baja' || sev === 'ninguno') prioridadMapeada = 'Baja';
 
                     // --- Mapeo de inseguridad/riesgo como "peligro inminente" ---
-                    const inseguridadVal = getBoolVal(item, ['Inseguridad y riesgo público', 'inseguridadRiesgoPublico']);
+                    const inseguridadVal = getBoolVal(item, ['Inseguridad y riesgo público', 'inseguridadRiesgoPublico', 'Inseguridad y riesgo público – Hurtos, robos, riñas o presencia de vendedores no autorizados en buses o estaciones.']);
                     const peligroMapeado = inseguridadVal ? 'Sí' : 'No';
 
                     // --- Validación de coordenadas: verificar que ambas existan y sean similares ---
@@ -415,15 +415,15 @@ class DashboardView extends HTMLElement {
                         fechaHoraSuceso: getVal(item, ['Fecha y hora del suceso', 'fechaHoraSuceso']) || '',
                         descripcionBreve: getVal(item, ['Descripción breve del hecho', 'descripcionBreve']) || 'Sin descripción',
 
-                        andenesDestruidos: getBoolVal(item, ['Andenes destruidos', 'andenesDestruidos']),
-                        alcantarilladoColapsado: getBoolVal(item, ['Alcantarillado colapsado o sin tapas', 'alcantarilladoColapsado']),
-                        senalizacionVialBorrosa: getBoolVal(item, ['Señalización vial borrosa', 'senalizacionVialBorrosa']),
-                        acumulacionBasuras: getBoolVal(item, ['Acumulación de basuras', 'acumulacionBasuras']),
-                        contaminacionVisual: getBoolVal(item, ['Contaminación visual', 'contaminacionVisual']),
-                        deficitZonasVerdes: getBoolVal(item, ['Déficit de zonas verdes', 'deficitZonasVerdes']),
+                        andenesDestruidos: getBoolVal(item, ['Andenes destruidos', 'andenesDestruidos', 'Daños en infraestructura física – Puertas corredizas, barandas, taquillas o baldosas rotas en estaciones/portales.']),
+                        alcantarilladoColapsado: getBoolVal(item, ['Alcantarillado colapsado o sin tapas', 'alcantarilladoColapsado', 'Fallas en iluminación o servicios – Estaciones sin luz, tableros informativos apagados o falta de energía.']),
+                        senalizacionVialBorrosa: getBoolVal(item, ['Señalización vial borrosa', 'senalizacionVialBorrosa', 'Fallas en torniquetes y validadores – Problemas para recargar tarjetas o pasar por el torniquete.']),
+                        acumulacionBasuras: getBoolVal(item, ['Acumulación de basuras', 'acumulacionBasuras', 'Problemas de aseo o ventilación – Buses sucios, acumulación de basura o aire acondicionado apagado/dañado.']),
+                        contaminacionVisual: getBoolVal(item, ['Contaminación visual', 'contaminacionVisual', 'Fallas mecánicas o técnicas en ruta – Bus articulado, padrón o alimentador varado o con fallas visibles.']),
+                        deficitZonasVerdes: getBoolVal(item, ['Déficit de zonas verdes', 'deficitZonasVerdes', 'Vandalismo o daños internos en buses – Vidrios rotos, sillas rayadas, sueltas o timbres dañados.']),
                         inseguridadRiesgoPublico: inseguridadVal,
-                        contaminacionAcustica: getBoolVal(item, ['Contaminación acústica', 'contaminacionAcustica']),
-                        viviendasRuinas: getBoolVal(item, ['Viviendas o edificaciones en ruinas', 'viviendasRuinas']),
+                        contaminacionAcustica: getBoolVal(item, ['Contaminación acústica', 'contaminacionAcustica', 'Invasión del carril exclusivo – Vehículos particulares, motos o taxis transitando por la vía del Metrolínea.']),
+                        viviendasRuinas: getBoolVal(item, ['Viviendas o edificaciones en ruinas', 'viviendasRuinas', 'Accidentes o imprudencias viales – Choques, frenazos bruscos o incidentes en cruces peatonales de la ruta.']),
 
                         descripcionAdicional: getVal(item, ['Descripción adicional del daño y pretensiones', 'descripcionAdicional']),
                         coordenadasManual: coordManualRaw,
@@ -727,15 +727,15 @@ class DashboardView extends HTMLElement {
         // Generar lista de checkboxes de afectaciones
         const renderCheckboxesList = () => {
             const categories = [
-                { id: 'andenesDestruidos', label: 'Andenes destruidos', val: ticket.andenesDestruidos },
-                { id: 'alcantarilladoColapsado', label: 'Alcantarillado colapsado o sin tapas', val: ticket.alcantarilladoColapsado },
-                { id: 'senalizacionVialBorrosa', label: 'Señalización vial borrosa', val: ticket.senalizacionVialBorrosa },
-                { id: 'acumulacionBasuras', label: 'Acumulación de basuras', val: ticket.acumulacionBasuras },
-                { id: 'contaminacionVisual', label: 'Contaminación visual', val: ticket.contaminacionVisual },
-                { id: 'deficitZonasVerdes', label: 'Déficit de zonas verdes', val: ticket.deficitZonasVerdes },
-                { id: 'inseguridadRiesgoPublico', label: 'Inseguridad y riesgo público', val: ticket.inseguridadRiesgoPublico },
-                { id: 'contaminacionAcustica', label: 'Contaminación acústica', val: ticket.contaminacionAcustica },
-                { id: 'viviendasRuinas', label: 'Viviendas o edificaciones en ruinas', val: ticket.viviendasRuinas },
+                { id: 'andenesDestruidos', label: 'Daños en estaciones/portales', val: ticket.andenesDestruidos },
+                { id: 'alcantarilladoColapsado', label: 'Fallas de iluminación/energía', val: ticket.alcantarilladoColapsado },
+                { id: 'senalizacionVialBorrosa', label: 'Fallas en validadores/torniquetes', val: ticket.senalizacionVialBorrosa },
+                { id: 'acumulacionBasuras', label: 'Problemas de aseo/ventilación en bus', val: ticket.acumulacionBasuras },
+                { id: 'contaminacionVisual', label: 'Falla mecánica/técnica en ruta', val: ticket.contaminacionVisual },
+                { id: 'deficitZonasVerdes', label: 'Vandalismo/daños internos en bus', val: ticket.deficitZonasVerdes },
+                { id: 'inseguridadRiesgoPublico', label: 'Inseguridad en bus o estación', val: ticket.inseguridadRiesgoPublico },
+                { id: 'contaminacionAcustica', label: 'Invasión de carril exclusivo', val: ticket.contaminacionAcustica },
+                { id: 'viviendasRuinas', label: 'Accidente o imprudencia vial', val: ticket.viviendasRuinas },
             ];
 
             return categories.map(cat => {

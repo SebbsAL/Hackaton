@@ -8,7 +8,7 @@ class ReportForm extends HTMLElement {
         this.map = null;
         this.marker = null;
         this.attachedPhotos = [];
-        this.n8nWebhookUrl = 'https://yapping-childless-baggage.ngrok-free.dev/webhook-test/reporte';
+        this.n8nWebhookUrl = 'https://hackaton2026.app.n8n.cloud/webhook-test/reporte';
     }
 
     connectedCallback() {
@@ -27,7 +27,7 @@ class ReportForm extends HTMLElement {
                 </button>
             </div>
             <div class="form-header">
-                <h1>📋 Reporte de Daños o Afectaciones</h1>
+                <h1>📋 Reporte de Daños o Afectaciones en Metrolínea</h1>
                 <p>Todos los campos son obligatorios. Complete la información con precisión.</p>
             </div>
             <form id="reportForm" novalidate>
@@ -93,15 +93,15 @@ class ReportForm extends HTMLElement {
                     <legend>3. Pretensiones y Daños</legend>
                     <div class="form-grid col-1">
                         <div class="form-group">
-                            <label style="font-weight:700;color:var(--text-primary);">Infraestructura Vial y Espacio Público</label>
+                            <label style="font-weight:700;color:var(--text-primary);">Infraestructura de Estaciones y Portales Metrolínea</label>
                             <div class="checkbox-group" id="infraestructuraVial"></div>
                         </div>
                         <div class="form-group">
-                            <label style="font-weight:700;color:var(--text-primary);">Medio Ambiente y Sostenibilidad</label>
+                            <label style="font-weight:700;color:var(--text-primary);">Estado y Funcionamiento de los Buses</label>
                             <div class="checkbox-group" id="medioAmbiente"></div>
                         </div>
                         <div class="form-group">
-                            <label style="font-weight:700;color:var(--text-primary);">Riesgos en el Entorno Urbano</label>
+                            <label style="font-weight:700;color:var(--text-primary);">Operación en Vía y Seguridad</label>
                             <div class="checkbox-group" id="riesgosUrbanos"></div>
                         </div>
                         <div class="form-group">
@@ -253,19 +253,19 @@ class ReportForm extends HTMLElement {
 
     populateCheckboxes() {
         const infraestructura = [
-            { id: 'andenesDestruidos', label: 'Andenes destruidos – Aceras agrietadas, levantadas, baldosas sueltas o rampas obstruidas.' },
-            { id: 'alcantarilladoColapsado', label: 'Alcantarillado colapsado o sin tapas – Tuberías rebosadas, rejillas y pozos expuestos.' },
-            { id: 'senalizacionVialBorrosa', label: 'Señalización vial borrosa – Pintura desgastada, señales oxidadas u ocultas.' },
+            { id: 'andenesDestruidos', label: 'Daños en infraestructura física – Puertas corredizas, barandas, taquillas o baldosas rotas en estaciones/portales.' },
+            { id: 'alcantarilladoColapsado', label: 'Fallas en iluminación o servicios – Estaciones sin luz, tableros informativos apagados o falta de energía.' },
+            { id: 'senalizacionVialBorrosa', label: 'Fallas en torniquetes y validadores – Problemas para recargar tarjetas o pasar por el torniquete.' },
         ];
         const medioAmbiente = [
-            { id: 'acumulacionBasuras', label: 'Acumulación de basuras – Puntos críticos de residuos sólidos.' },
-            { id: 'contaminacionVisual', label: 'Contaminación visual – Publicidad ilegal, cableado enredado, grafitis no autorizados.' },
-            { id: 'deficitZonasVerdes', label: 'Déficit de zonas verdes – Parques abandonados, áreas deforestadas.' },
+            { id: 'acumulacionBasuras', label: 'Problemas de aseo o ventilación – Buses sucios, acumulación de basura o aire acondicionado apagado/dañado.' },
+            { id: 'contaminacionVisual', label: 'Fallas mecánicas o técnicas en ruta – Bus articulado, padrón o alimentador varado o con fallas visibles.' },
+            { id: 'deficitZonasVerdes', label: 'Vandalismo o daños internos en buses – Vidrios rotos, sillas rayadas, sueltas o timbres dañados.' },
         ];
         const riesgos = [
-            { id: 'inseguridadRiesgoPublico', label: 'Inseguridad y riesgo público – Zonas oscuras, espacios abandonados.' },
-            { id: 'contaminacionAcustica', label: 'Contaminación acústica – Ruido excesivo por tráfico u obras.' },
-            { id: 'viviendasRuinas', label: 'Viviendas o edificaciones en ruinas – Inmuebles con riesgo de colapso.' },
+            { id: 'inseguridadRiesgoPublico', label: 'Inseguridad y riesgo público – Hurtos, robos, riñas o presencia de vendedores no autorizados en buses o estaciones.' },
+            { id: 'contaminacionAcustica', label: 'Invasión del carril exclusivo – Vehículos particulares, motos o taxis transitando por la vía del Metrolínea.' },
+            { id: 'viviendasRuinas', label: 'Accidentes o imprudencias viales – Choques, frenazos bruscos o incidentes en cruces peatonales de la ruta.' },
         ];
 
         this.renderCheckboxGroup('infraestructuraVial', infraestructura);
@@ -474,7 +474,7 @@ class ReportForm extends HTMLElement {
         if (el.id === 'fechaHoraSuceso' && el.value.trim()) {
             const inputDate = new Date(el.value);
             const currentDate = new Date();
-            
+
             const yearStr = el.value.split('-')[0];
             const inputYear = inputDate.getFullYear();
             const currentYear = currentDate.getFullYear();
@@ -587,21 +587,21 @@ class ReportForm extends HTMLElement {
         const form = this.querySelector('#reportForm');
         if (!form) return;
         const state = {};
-        
+
         // Inputs y textareas normales
         form.querySelectorAll('input:not([type="file"]):not([type="checkbox"]), textarea, select').forEach(el => {
             if (el.name) {
                 state[el.name] = el.value;
             }
         });
-        
+
         // Checkboxes (afectaciones)
         form.querySelectorAll('input[type="checkbox"]').forEach(el => {
             if (el.name) {
                 state[el.name] = el.checked;
             }
         });
-        
+
         localStorage.setItem('report_form_state', JSON.stringify(state));
     }
 
@@ -610,21 +610,21 @@ class ReportForm extends HTMLElement {
             const saved = localStorage.getItem('report_form_state');
             if (!saved) return;
             const state = JSON.parse(saved);
-            
+
             // Restaurar campos de texto y textareas
             this.querySelectorAll('input:not([type="file"]):not([type="checkbox"]), textarea, select').forEach(el => {
                 if (el.name && state[el.name] !== undefined) {
                     el.value = state[el.name];
                 }
             });
-            
+
             // Restaurar checkboxes
             this.querySelectorAll('input[type="checkbox"]').forEach(el => {
                 if (el.name && state[el.name] !== undefined) {
                     el.checked = state[el.name];
                 }
             });
-            
+
             // Restaurar pin de mapa si hay coordenadas manuales guardadas
             const coordManualVal = this.querySelector('#coordenadasManual')?.value;
             if (coordManualVal) {
@@ -644,17 +644,17 @@ class ReportForm extends HTMLElement {
         try {
             const lastSubmission = JSON.parse(lastSubmissionStr);
             const now = Date.now();
-            
+
             // Si pasaron más de 30 segundos, limpiar y permitir
             if (now - lastSubmission.timestamp > 30000) {
                 localStorage.removeItem('last_submitted_report');
                 return true;
             }
-            
+
             // Comparar descripciones
             const currentDescBreve = this.querySelector('#descripcionBreve')?.value.trim() || '';
             const currentDescAdic = this.querySelector('#descripcionAdicional')?.value.trim() || '';
-            
+
             if (currentDescBreve === lastSubmission.descripcionBreve && currentDescAdic === lastSubmission.descripcionAdicional) {
                 return false; // Duplicado detectado
             }
@@ -719,7 +719,7 @@ class ReportForm extends HTMLElement {
             if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             this.showToast(`Reporte enviado exitosamente. Ticket: ${jsonData.ticketId}`, 'success');
             statusEl.innerHTML = `<span style="color:var(--success);">Reporte enviado correctamente.<br><strong>Número de Ticket: ${jsonData.ticketId}</strong></span>`;
-            
+
             // Guardar datos en localStorage para simulación de idempotencia (expira en 30s)
             const submissionToSave = {
                 descripcionBreve: jsonData.descripcionBreve,
@@ -733,7 +733,7 @@ class ReportForm extends HTMLElement {
 
             // Limpiar el estado de localStorage al enviar correctamente
             this.clearFormState();
-            
+
             // Resetear formulario
             this.querySelector('#reportForm').reset();
             this.attachedPhotos = [];
