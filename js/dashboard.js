@@ -17,7 +17,7 @@ class DashboardView extends HTMLElement {
         this.searchQuery = '';
         
         // URL del Webhook de n8n fija (Modo Producción)
-        this.n8nUrl = 'https://hackaton2026.app.n8n.cloud/webhook-test/gestion';
+        this.n8nUrl = 'https://hackaton2026.app.n8n.cloud/webhook/gestion';
 
         // Referencias de Mapa Leaflet
         this.detailMap = null;
