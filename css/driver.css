@@ -1,0 +1,244 @@
+/* css/driver.css */
+/* Styles for Driver-specific reporting page */
+
+driver-report-form {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2.5rem 3rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin: 1.5rem auto;
+}
+
+/* Header updates */
+.form-header.driver-header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.form-header.driver-header h1 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.form-header.driver-header p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Preloaded readonly inputs styling */
+.input-readonly {
+    background-color: var(--bg-tertiary) !important;
+    border-color: var(--border) !important;
+    color: var(--text-secondary) !important;
+    font-weight: 600;
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+/* GPS tracking alert box */
+.gps-status-box {
+    grid-column: 1 / -1;
+    background: rgba(91, 140, 206, 0.08);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gps-status-box .status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-subtle);
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.gps-status-box.success {
+    background: rgba(76, 175, 132, 0.08);
+    border-color: var(--success);
+}
+.gps-status-box.success .status-indicator {
+    background: rgba(76, 175, 132, 0.15);
+    color: var(--success);
+}
+
+.gps-status-box.error {
+    background: rgba(224, 93, 93, 0.08);
+    border-color: var(--error);
+}
+.gps-status-box.error .status-indicator {
+    background: rgba(224, 93, 93, 0.15);
+    color: var(--error);
+}
+
+.gps-status-box .status-text {
+    flex-grow: 1;
+}
+
+.gps-status-box h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+}
+
+.gps-status-box p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Extra large touch target options */
+.driver-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 650px) {
+    .driver-options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.driver-option-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-tertiary);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all var(--transition);
+}
+
+.driver-option-card:hover {
+    border-color: var(--accent-hover);
+    background: var(--accent-subtle);
+}
+
+.driver-option-card.selected {
+    border-color: var(--accent);
+    background: rgba(91, 140, 206, 0.15);
+    box-shadow: 0 0 12px rgba(91, 140, 206, 0.2);
+}
+
+/* High contrast selected state */
+body.high-contrast .driver-option-card.selected {
+    border-color: var(--accent);
+    background: var(--accent-subtle);
+    border-width: 2.5px;
+}
+
+.driver-option-card input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.driver-option-card .option-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.driver-option-card .option-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.driver-option-card .option-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.driver-option-card .option-desc {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+}
+
+/* Giant Submit Button */
+.btn-submit-giant {
+    margin-top: 2.5rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(91, 140, 206, 0.35);
+    transition: all var(--transition);
+}
+
+.btn-submit-giant:hover:not(:disabled) {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(91, 140, 206, 0.5);
+}
+
+.btn-submit-giant:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-submit-giant:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Readonly fields container details */
+.readonly-indicator {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: normal;
+    background: var(--bg-secondary);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    margin-left: 0.5rem;
+}
+
+/* Back link button */
+.back-btn-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color var(--transition);
+}
+
+.back-btn:hover {
+    color: var(--accent);
+}
