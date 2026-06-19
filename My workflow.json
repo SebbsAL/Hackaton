@@ -1,0 +1,2942 @@
+{
+  "name": "TELEGRAM BOT",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "reporte",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1616,
+        1408
+      ],
+      "id": "1bf73d63-0fc4-41f0-9dbe-e9724de881a1",
+      "name": "Webhook",
+      "webhookId": "3268990c-9409-480c-aef0-39633a6eef94"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "reportes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha de reporte": "={{ $json.body.fechaReporte }}",
+            "Nombre completo": "={{ $json.body.nombreCompleto }}",
+            "Documento de identidad": "={{ $json.body.documentoIdentidad }}",
+            "Dirección física (contacto)": "={{ $json.body.direccionFisica }}",
+            "Teléfono": "={{ $json.body.telefono }}",
+            "Correo electrónico": "={{ $json.body.correoElectronico }}",
+            "Ubicación exacta del suceso": "={{ $json.body.ubicacionExactaSuceso }}",
+            "Fecha y hora del suceso": "={{ $json.body.fechaHoraSuceso }}",
+            "Descripción breve del hecho": "={{ $json.body.descripcionBreve }}",
+            "Inseguridad y riesgo público": "={{ $json.body.deficitZonasVerdes }}",
+            "Viviendas o edificaciones en ruinas": "={{ $json.body.viviendasRuinas }}",
+            "Descripción adicional del daño y pretensiones": "={{ $json.body.descripcionAdicional }}",
+            "ticketId": "={{ $json.body.ticketId }}",
+            "Daños en infraestructura física": "={{ $json.body.andenesDestruidos }}",
+            "Fallas en iluminación o servicios": "={{ $json.body.alcantarilladoColapsado }}",
+            "Fallas en torniquetes y validadores": "={{ $json.body.senalizacionVialBorrosa }}",
+            "Problemas de aseo o ventilación": "={{ $json.body.acumulacionBasuras }}",
+            "\nFallas mecánicas o técnicas en ruta ": "={{ $json.body.contaminacionVisual }}",
+            "Invasión del carril exclusivo": "={{ $json.body.inseguridadRiesgoPublico }}",
+            "Accidentes o imprudencias viales": "={{ $json.body.contaminacionAcustica }}",
+            "Coordenadas (ingreso manual)": "={{ $json.body.coordenadasManual }}",
+            "Coordenadas por API (teléfono)": "={{ $json.body.coordenadasAPI }}",
+            "Observaciones adicionales": "={{ $json.body.observacionesAdicionales }}",
+            "estadoTicket": "ACEPTADO"
+          },
+          "matchingColumns": [
+            "ticketId"
+          ],
+          "schema": [
+            {
+              "id": "Fecha de reporte",
+              "displayName": "Fecha de reporte",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre completo",
+              "displayName": "Nombre completo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Documento de identidad",
+              "displayName": "Documento de identidad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Dirección física (contacto)",
+              "displayName": "Dirección física (contacto)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Teléfono",
+              "displayName": "Teléfono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Correo electrónico",
+              "displayName": "Correo electrónico",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ubicación exacta del suceso",
+              "displayName": "Ubicación exacta del suceso",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fecha y hora del suceso",
+              "displayName": "Fecha y hora del suceso",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Descripción breve del hecho",
+              "displayName": "Descripción breve del hecho",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Daños en infraestructura física",
+              "displayName": "Daños en infraestructura física",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fallas en iluminación o servicios",
+              "displayName": "Fallas en iluminación o servicios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fallas en torniquetes y validadores",
+              "displayName": "Fallas en torniquetes y validadores",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Problemas de aseo o ventilación",
+              "displayName": "Problemas de aseo o ventilación",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "\nFallas mecánicas o técnicas en ruta ",
+              "displayName": "\nFallas mecánicas o técnicas en ruta ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Inseguridad y riesgo público",
+              "displayName": "Inseguridad y riesgo público",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Invasión del carril exclusivo",
+              "displayName": "Invasión del carril exclusivo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Viviendas o edificaciones en ruinas",
+              "displayName": "Viviendas o edificaciones en ruinas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Accidentes o imprudencias viales",
+              "displayName": "Accidentes o imprudencias viales",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Descripción adicional del daño y pretensiones",
+              "displayName": "Descripción adicional del daño y pretensiones",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fotografías",
+              "displayName": "Fotografías",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Coordenadas (ingreso manual)",
+              "displayName": "Coordenadas (ingreso manual)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Coordenadas por API (teléfono)",
+              "displayName": "Coordenadas por API (teléfono)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Observaciones adicionales",
+              "displayName": "Observaciones adicionales",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ticketId",
+              "displayName": "ticketId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "estadoTicket",
+              "displayName": "estadoTicket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1392,
+        1312
+      ],
+      "id": "28d7040c-347b-4516-8fd7-219909f4f84d",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KyhHVBX2U9MQVD17",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78",
+          "mode": "list",
+          "cachedResultName": "Base de datos Proyecto",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 976186585,
+          "mode": "list",
+          "cachedResultName": "reporteia",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit#gid=976186585"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticketID": "={{ $json.ticketId }}",
+            "categoria_ia": "={{ $json.categoria_ia }}",
+            "severidad": "={{ $json.prioridad }}",
+            "confianza": "={{ $json.confianza }}",
+            "peligro_inminente": "={{ $json.peligro_inminente }}",
+            "palabras_clave_detectadas": "={{ $json.palabras_clave_detectadas }}",
+            "coherencia_texto_imagen": "={{ $json.coherencia_texto_imagen }}",
+            "validacion_coordenadas": "={{ $json.validacion_coordenadas }}",
+            "resumen_ia": "={{ $json.resumen_ia }}",
+            "prioridad_texto": "={{ $json.prioridad_texto }}",
+            "timestamp_procesamiento": "={{ $json.timestamp_procesamiento }}"
+          },
+          "matchingColumns": [
+            "ticketID"
+          ],
+          "schema": [
+            {
+              "id": "ticketID",
+              "displayName": "ticketID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "categoria_ia",
+              "displayName": "categoria_ia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "severidad",
+              "displayName": "severidad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "confianza",
+              "displayName": "confianza",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "peligro_inminente",
+              "displayName": "peligro_inminente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "palabras_clave_detectadas",
+              "displayName": "palabras_clave_detectadas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "coherencia_texto_imagen",
+              "displayName": "coherencia_texto_imagen",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "validacion_coordenadas",
+              "displayName": "validacion_coordenadas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "resumen_ia",
+              "displayName": "resumen_ia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "prioridad_texto",
+              "displayName": "prioridad_texto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "timestamp_procesamiento",
+              "displayName": "timestamp_procesamiento",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -368,
+        1360
+      ],
+      "id": "bb579e93-5c4c-43c8-bd1e-6fbe31dee6fa",
+      "name": "Append or update row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KyhHVBX2U9MQVD17",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener el primer elemento del array de entrada (el nodo anterior debe entregar el JSON mostrado)\nconst inputData = $input.first().json;\n\n// Verificar que exista la propiedad \"output\" y que sea un string\nif (!inputData.output || typeof inputData.output !== 'string') {\n  throw new Error('La propiedad \"output\" no existe o no es un string válido');\n}\n\n// Parsear el string JSON interno\nlet parsedOutput;\ntry {\n  parsedOutput = JSON.parse(inputData.output);\n} catch (error) {\n  throw new Error(`Error al parsear el JSON de output: ${error.message}`);\n}\n\n// Construir el objeto final con todos los campos necesarios para los nodos siguientes\nconst processedData = {\n  // Datos principales del análisis\n  ticketId: parsedOutput.ticketId,\n  categoria_ia: parsedOutput.categoria_ia,\n  prioridad: parsedOutput.prioridad,\n  confianza: parsedOutput.confianza,\n  peligro_inminente: parsedOutput.peligro_inminente,\n  palabras_clave_detectadas: parsedOutput.palabras_clave_detectadas,\n  coherencia_texto_imagen: parsedOutput.coherencia_texto_imagen,\n  validacion_coordenadas: parsedOutput.validacion_coordenadas,\n  resumen_ia: parsedOutput.resumen_ia,\n  \n  // Campo adicional para facilitar el uso en notificaciones (por ejemplo, prioridad en texto)\n  prioridad_texto: parsedOutput.prioridad === 'MODERADA' ? 'Moderada' : \n                   (parsedOutput.prioridad === 'ALTA' ? 'Alta' : 'Baja'),\n  \n  // Timestamp de procesamiento (opcional, útil para registro)\n  timestamp_procesamiento: new Date().toISOString()\n};\n\n// Devolver el objeto procesado para los nodos siguientes\nreturn [processedData];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -592,
+        1360
+      ],
+      "id": "b6246d50-bf16-4c09-8f1d-a3d5e17da18d",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "sendTo": "sergiocampuslands@gmail.com",
+        "subject": "URGENTE, PELIGRO CRITICO.",
+        "emailType": "text",
+        "message": "=Ticket: {{ $('Append or update row in sheet1').item.json.ticketID }}\nNIvel de prioridad: {{ $json.severidad }}\nDebe desplazarce a la zona: {{ $('Webhook').item.json.body.direccionFisica }}\ncoordenadas: {{ $('Webhook').item.json.body.coordenadasAPI }} adicionalemnte {{ $('Webhook').item.json.body.observacionesAdicionales }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        80,
+        1168
+      ],
+      "id": "d1c6f8b9-513c-481b-a707-5b28b554a85a",
+      "name": "Reporte unidad tecnica",
+      "webhookId": "36092350-cc5d-481d-8b10-fe015afae0c2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "ugeOp8Yqi2iRG1q8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "sergiocampuslands@gmail.com",
+        "subject": "Revision en las próximas 1 a 2 horas. ",
+        "emailType": "text",
+        "message": "=Ticket: {{ $('Append or update row in sheet1').item.json.ticketID }}\nNIvel de prioridad: {{ $json.severidad }}\nDebe desplazarce a la zona:  {{ $('Webhook').item.json.body.ubicacionExactaSuceso }}\ncoordenadas: {{ $('Webhook').item.json.body.coordenadasAPI }} \nadicionalemnte {{ $('Webhook').item.json.body.observacionesAdicionales }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        80,
+        1360
+      ],
+      "id": "2570edfa-988b-499b-b2d3-c5fe9c35b33f",
+      "name": "Reporte unidad tecnica1",
+      "webhookId": "36092350-cc5d-481d-8b10-fe015afae0c2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "ugeOp8Yqi2iRG1q8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "sergiocampuslands@gmail.com",
+        "subject": "Revision agendada en 2 dias. ",
+        "emailType": "text",
+        "message": "=Ticket: {{ $('Webhook').item.json.body.ticketId }}\nNIvel de prioridad: {{ $json.severidad }}\nDebe desplazarce a la zona: {{ $('Webhook').item.json.body.ubicacionExactaSuceso }}\ncoordenadas: {{ $('Webhook').item.json.body.coordenadasAPI }}\n\nDescripcion del suceso:{{$('Webhook').item.json.body.descripcionBreve }} {{ $('Webhook').item.json.body.observacionesAdicionales }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        80,
+        1552
+      ],
+      "id": "1d27e372-56bd-40af-854c-ef27b7e296a6",
+      "name": "Reporte unidad tecnica2",
+      "webhookId": "36092350-cc5d-481d-8b10-fe015afae0c2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "ugeOp8Yqi2iRG1q8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Webhook').item.json.body.correoElectronico }}",
+        "subject": "Reporte recibido",
+        "emailType": "text",
+        "message": "=Su reporte con Ticket: {{ $('Append or update row in sheet1').item.json.ticketID }} ah sido recibido y enviado al encargado. NIvel de prioridad asignado: {{ $('Append or update row in sheet1').item.json.severidad }}. \n\nMuchas gracias por su reporte.",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        304,
+        1168
+      ],
+      "id": "00be51fe-e9bd-4db3-8dfd-a0672a08c621",
+      "name": "Respuesta a usuario",
+      "webhookId": "36092350-cc5d-481d-8b10-fe015afae0c2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "ugeOp8Yqi2iRG1q8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Webhook').item.json.body.correoElectronico }}",
+        "subject": "Reporte recibido",
+        "emailType": "text",
+        "message": "=Su reporte con Ticket: {{ $('Append or update row in sheet1').item.json.ticketID }} ah sido recibido y enviado al encargado. NIvel de prioridad asignado: {{ $('Append or update row in sheet1').item.json.severidad }}. \n\nMuchas gracias por su reporte.",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        304,
+        1552
+      ],
+      "id": "71e52c77-21f7-4d99-964b-ebf1466154cc",
+      "name": "Respuesta a usuario2",
+      "webhookId": "36092350-cc5d-481d-8b10-fe015afae0c2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "ugeOp8Yqi2iRG1q8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Webhook').item.json.body.correoElectronico }}",
+        "subject": "Reporte recibido",
+        "emailType": "text",
+        "message": "=Su reporte con Ticket: {{ $('Append or update row in sheet1').item.json.ticketID }} ah sido recibido y enviado al encargado. NIvel de prioridad asignado: {{ $('Append or update row in sheet1').item.json.severidad }}. \n\nMuchas gracias por su reporte.",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        304,
+        1360
+      ],
+      "id": "2f7b7165-297b-412f-aa7b-b9ae4187af6c",
+      "name": "Respuesta a usuario1",
+      "webhookId": "36092350-cc5d-481d-8b10-fe015afae0c2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "ugeOp8Yqi2iRG1q8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.severidad }}",
+                    "rightValue": "CRÍTICA",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "1a9754e0-1d8f-4b86-8b46-39d3548d2a0f"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "061fe8c9-8ae3-44e3-b85d-c314970965c4",
+                    "leftValue": "={{ $json.severidad }}",
+                    "rightValue": "=MODERADA",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "8840724c-1997-454a-8d7b-20aaba009e0b",
+                    "leftValue": "={{ $json.severidad }}",
+                    "rightValue": "BAJA",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -144,
+        1344
+      ],
+      "id": "8009bb6a-cab2-4462-b9d6-7ada5f07069a",
+      "name": "Respuesta tecnica."
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -1168,
+        1984
+      ],
+      "id": "049d0625-0a76-46bb-aabf-a10ea18558a7",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78",
+          "mode": "list",
+          "cachedResultName": "Base de datos Proyecto",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "reportes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1392,
+        1888
+      ],
+      "id": "71ee2549-3e6f-4ba2-9a26-cc902c93c531",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KyhHVBX2U9MQVD17",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78",
+          "mode": "list",
+          "cachedResultName": "Base de datos Proyecto",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 976186585,
+          "mode": "list",
+          "cachedResultName": "reporteia",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit#gid=976186585"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1392,
+        2080
+      ],
+      "id": "c18472b5-f931-4110-941d-a3d33ed86a82",
+      "name": "Get row(s) in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KyhHVBX2U9MQVD17",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Los datos de entrada vienen del nodo anterior\nconst items = $input.all();\n\n// Extraer los datos JSON de cada item\nconst data = items.map(item => item.json);\n\n// Función para combinar tickets\nfunction combinarTickets(data) {\n  const mapa = new Map();\n  \n  // Agrupar por ticketID\n  data.forEach(item => {\n    // Obtener el ID (puede estar en ticketID o ticketId)\n    const id = item.ticketID || item.ticketId;\n    \n    if (!id) return;\n    \n    if (!mapa.has(id)) {\n      mapa.set(id, {});\n    }\n    \n    // Combinar todas las propiedades\n    const objetoActual = mapa.get(id);\n    Object.keys(item).forEach(key => {\n      if (key === 'ticketId') {\n        objetoActual.ticketID = item[key];\n      } else {\n        objetoActual[key] = item[key];\n      }\n    });\n  });\n  \n  return Array.from(mapa.values());\n}\n\n// Procesar los datos\nconst resultado = combinarTickets(data);\n\n// Retornar en el formato que n8n espera\nreturn resultado.map(item => ({\n  json: item\n}));"
+      },
+      "id": "f3626c97-47a8-4339-9bac-361d5c7ae784",
+      "name": "Formatear Datos",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -944,
+        1984
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "GET, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -720,
+        1984
+      ],
+      "id": "c9ddac9d-c07a-4e0c-83b4-5a5cb2b3f2e9",
+      "name": "Respond to Webhook",
+      "notesInFlow": false
+    },
+    {
+      "parameters": {
+        "path": "gestion",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1616,
+        1984
+      ],
+      "id": "e9ee18f9-16de-48fa-97aa-62a30894f227",
+      "name": "Webhook1",
+      "webhookId": "06efc599-c0cb-42ee-ae06-32091e47601d",
+      "notesInFlow": false
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.1-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -864,
+        1488
+      ],
+      "id": "f85cb393-306a-4191-a5d9-1ff80eaaf3a6",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "VfIyZ2C6jN94fUrx",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=ROL: Agente de clasificación y priorización de reportes de daños urbanos. Recibes el análisis visual de una imagen (ya realizado por otro proceso) y los datos del formulario, y debes clasificar el incidente.\n\nENTRADA:\n- ticketId: {{ $('Webhook').item.json.body.ticketId }}\n- descripcion_imagen (análisis visual ya realizado): {{ $json.content.parts[0].text }}\n- descripcionBreve: {{ $('Webhook').item.json.body.descripcionBreve }}\n- descripcionAdicional: {{ $('Webhook').item.json.body.descripcionAdicional }}\n- checkboxes: {{ $('Webhook').item.json.body.andenesDestruidos }}{{ $('Webhook').item.json.body.alcantarilladoColapsado }}{{ $('Webhook').item.json.body.senalizacionVialBorrosa }}{{ $('Webhook').item.json.body.acumulacionBasuras }}{{ $('Webhook').item.json.body.contaminacionVisual }}{{ $('Webhook').item.json.body.deficitZonasVerdes }}{{ $('Webhook').item.json.body.inseguridadRiesgoPublico }}{{ $('Webhook').item.json.body.contaminacionAcustica }}{{ $('Webhook').item.json.body.viviendasRuinas }}\n- coordenadas: {{ $('Webhook').item.json.body.coordenadasManual }} / {{ $('Webhook').item.json.body.coordenadasAPI }}\n\nTAREAS:\n\n1. VALIDACIÓN DE COHERENCIA (paso obligatorio antes de clasificar):\nCompara tres fuentes: descripcion_imagen (Nodo 1), descripcionBreve, y descripcionAdicional.\n- Si descripcion_imagen indica que NO es un daño real (meme, foto irrelevante, etc.) → confianza = 0, coherencia_texto_imagen = false, prioridad = BAJA. Salta directo al paso 4.\n- Si la imagen SÍ muestra un daño real pero el tipo de daño descrito por el usuario (texto/checkboxes) NO concuerda con lo que describe descripcion_imagen (ej. el usuario reporta \"alcantarillado colapsado\" pero la imagen muestra basuras acumuladas) → coherencia_texto_imagen = false y prioridad = BAJA, sin importar las palabras clave de peligro detectadas en el paso 2.\n- Si concuerdan → coherencia_texto_imagen = true, continúa con la lógica normal de priorización.\n\n2. NLP sobre descripcionBreve + descripcionAdicional: detecta palabras clave de peligro crítico: gas, explosión, fuga, alto voltaje, eléctrico, cable vivo, colegio, escuela, hospital, niños, derrumbe, caída, riesgo, incendio, humo, fuego, accidente de tránsito, muerto.\n\n3. Clasifica (solo si coherencia_texto_imagen = true):\ncategoria_ia (una sola): Vías | Eléctrico | Acueducto | Espacio Público | Infraestructura | Accidentes | Otro\n\nSeveridad:\n- CRÍTICA: riesgo inminente, afecta servicio esencial (agua/luz/gas), zona de alta circulación (colegios/hospitales), palabra clave de peligro detectada, o accidente de tránsito.\n- MODERADA: daño visible que requiere atención, sin peligro inmediato, afecta calidad de vida.\n- BAJA: daño menor/cosmético, sin riesgo, programable.\n\nconfianza (0-100): 90-100 imagen clara+descripción coherente+daño evidente | 70-89 buena evidencia con ambigüedad menor | 50-69 evidencia limitada/contradictoria | <50 no verificable.\n\n4. Valida coordenadas (formato lat,long) y coherencia ubicación-descripción.\n\nSALIDA: SOLO este JSON, sin texto adicional:\n{\n  \"ticketId\": \"TKT-...\",\n  \"categoria_ia\": \"Vías|Eléctrico|Acueducto|Espacio Público|Infraestructura|Otro\",\n  \"prioridad\": \"CRÍTICA|MODERADA|BAJA\",\n  \"confianza\": 85,\n  \"peligro_inminente\": true|false,\n  \"palabras_clave_detectadas\": [\"gas\", \"colegio\"],\n  \"coherencia_texto_imagen\": true|false,\n  \"validacion_coordenadas\": true|false,\n  \"resumen_ia\": \"Breve justificación del análisis y decisión tomada.\"\n}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -944,
+        1264
+      ],
+      "id": "d45f25c4-457f-453f-9765-5aafbb32b559",
+      "name": "analize image",
+      "alwaysOutputData": true,
+      "executeOnce": false,
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-3.1-flash-lite",
+          "mode": "list",
+          "cachedResultName": "models/gemini-3.1-flash-lite"
+        },
+        "text": "Analiza esta imagen de forma quirúrgica, sin omitir detalles.\n\nPrimero determina si es una imagen real de daño/infraestructura urbana (no un meme, foto irrelevante, captura de pantalla, etc.). Si NO lo es, devuelve la expresion \"NO corresponde, *explicacion*\"\n\nSi es válida, describe:\n- Qué tipo de daño se observa: Vías (baches/andenes/señalización), Eléctrico (cableado/postes), Acueducto/Alcantarillado (fugas/colapsos), Espacio público (basuras/contaminación visual), o Infraestructura (viviendas en ruinas).\n- Si hay elementos de peligro inminente visibles (cables sueltos, estructuras a punto de colapsar, etc.).\n- Nivel de claridad de la imagen (nítida, borrosa, oscura, etc.).\n\nResponde en un párrafo de texto libre y descriptivo, sin formato JSON.",
+        "inputType": "binary",
+        "binaryPropertyName": "fotografias",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        -1392,
+        1504
+      ],
+      "id": "09d71747-0f68-41ae-b281-e704eb6381e8",
+      "name": "Analyze an image1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "VfIyZ2C6jN94fUrx",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "2ceb2756-4e37-4b7d-8f4e-856014f3a1df",
+              "leftValue": "={{ $json.content.parts[0].text }}",
+              "rightValue": "NO corresponde",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -1168,
+        1504
+      ],
+      "id": "64987707-aa4c-46b9-8003-41ac3143e57d",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "reportes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticketId": "={{ $json.body.ticketId }}",
+            "estadoTicket": "RECHAZADO"
+          },
+          "matchingColumns": [
+            "estadoTicket"
+          ],
+          "schema": [
+            {
+              "id": "Fecha de reporte",
+              "displayName": "Fecha de reporte",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Nombre completo",
+              "displayName": "Nombre completo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Documento de identidad",
+              "displayName": "Documento de identidad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Dirección física (contacto)",
+              "displayName": "Dirección física (contacto)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Teléfono",
+              "displayName": "Teléfono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Correo electrónico",
+              "displayName": "Correo electrónico",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Ubicación exacta del suceso",
+              "displayName": "Ubicación exacta del suceso",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Fecha y hora del suceso",
+              "displayName": "Fecha y hora del suceso",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Descripción breve del hecho",
+              "displayName": "Descripción breve del hecho",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Daños en infraestructura física",
+              "displayName": "Daños en infraestructura física",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Fallas en iluminación o servicios",
+              "displayName": "Fallas en iluminación o servicios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Fallas en torniquetes y validadores",
+              "displayName": "Fallas en torniquetes y validadores",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Problemas de aseo o ventilación",
+              "displayName": "Problemas de aseo o ventilación",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "\nFallas mecánicas o técnicas en ruta ",
+              "displayName": "\nFallas mecánicas o técnicas en ruta ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Inseguridad y riesgo público",
+              "displayName": "Inseguridad y riesgo público",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Invasión del carril exclusivo",
+              "displayName": "Invasión del carril exclusivo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Viviendas o edificaciones en ruinas",
+              "displayName": "Viviendas o edificaciones en ruinas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Accidentes o imprudencias viales",
+              "displayName": "Accidentes o imprudencias viales",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Descripción adicional del daño y pretensiones",
+              "displayName": "Descripción adicional del daño y pretensiones",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Fotografías",
+              "displayName": "Fotografías",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Coordenadas (ingreso manual)",
+              "displayName": "Coordenadas (ingreso manual)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Coordenadas por API (teléfono)",
+              "displayName": "Coordenadas por API (teléfono)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Observaciones adicionales",
+              "displayName": "Observaciones adicionales",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ticketId",
+              "displayName": "ticketId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "estadoTicket",
+              "displayName": "estadoTicket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -880,
+        1664
+      ],
+      "id": "96f6ce44-def7-4d82-9600-9503f0b21c74",
+      "name": "Append or update row in sheet2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KyhHVBX2U9MQVD17",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "Hola! Bienvenido a NeoMetro! Por favor, escoje una de las opciones para continuar con tu pedido",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Reporte Ciudadano 🚨",
+                    "additionalFields": {
+                      "callback_data": "btn_ciudadano"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Reporte de Conductor 🚌",
+                    "additionalFields": {
+                      "callback_data": "btn_conductor"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Consultar Ticket 📃",
+                    "additionalFields": {
+                      "callback_data": "btn_ticket"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1392,
+        848
+      ],
+      "id": "6ea41012-9b5f-4d0f-a4bc-fbbd946909f3",
+      "name": "Opciones Bot",
+      "webhookId": "e9822d53-834c-4544-a624-19a3753c8572",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message",
+          "callback_query"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -2016,
+        688
+      ],
+      "id": "75f64fd1-aaa2-48d1-ae18-1d59699c258a",
+      "name": "Mensaje Inicial",
+      "webhookId": "1f6b1271-8c5f-4c6d-82ab-5618358f8a5e",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e0f4aaf4-75c5-4608-8a18-d50f770ec53a",
+              "name": "opt_seleccionada",
+              "value": "={{ $json.callback_query.data }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1392,
+        432
+      ],
+      "id": "f05f6c8a-bc0c-4ab3-8737-8e51bda7f9fb",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.opt_seleccionada }}",
+                    "rightValue": "btn_ciudadano",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "2edd2f25-9503-4477-a056-4a75a6979f44"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "d1cc60d1-a762-45ae-bd2a-197a580073b3",
+                    "leftValue": "={{ $json.opt_seleccionada }}",
+                    "rightValue": "btn_conductor",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "b6052216-7b0a-4518-88b2-0a50a69afd1c",
+                    "leftValue": "={{ $json.opt_seleccionada }}",
+                    "rightValue": "btn_ticket",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -1168,
+        416
+      ],
+      "id": "b163aa52-0654-4f6c-8080-5ddf491c46a2",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Mensaje Inicial').item.json.callback_query.message.chat.id }}",
+        "text": "=Puede realizar su reporte en la siguiente pagina web: https://hackaton-eta-three.vercel.app/neometro.html",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -944,
+        240
+      ],
+      "id": "f95a051d-b608-4b27-bdce-202566434c7b",
+      "name": "Reporte Ciudadano",
+      "webhookId": "851fcd10-0fa3-449c-946e-435dda232154",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Mensaje Inicial').item.json.callback_query.message.chat.id }}",
+        "text": "=Puede realizar su reporte en la siguiente pagina web: https://hackaton-eta-three.vercel.app/reporte-conductor.html",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -944,
+        432
+      ],
+      "id": "aa6e9cb6-2d0e-46b3-a796-c2c2be2293b0",
+      "name": "Reporte Conductor",
+      "webhookId": "851fcd10-0fa3-449c-946e-435dda232154",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "={{ $('Mensaje Inicial').item.json.callback_query.message.chat.id }}",
+        "message": "Por favor, inserte su Ticket para iniciar la busqueda en nuestra base de datos",
+        "responseType": "freeText",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -944,
+        624
+      ],
+      "id": "091568c6-becc-489e-aef6-9c8907235ef7",
+      "name": "Consulta Ticket",
+      "webhookId": "3695d290-01f3-4e19-bc03-16af5fd6468f",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Mensaje Inicial').item.json.callback_query.message.chat.id }}",
+        "text": "=Busqueda finalizada, su ticket {{ $('Extractor del Ticket1').item.json.ticketId }} tiene un estatus actual de: ",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        624,
+        432
+      ],
+      "id": "3a5c9ca8-8f95-42ab-8c38-350746058cc1",
+      "name": "Ticket Confirmado",
+      "webhookId": "7a1b15c2-d7f8-43d2-b962-dc90c5859b58",
+      "executeOnce": true,
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Mensaje Inicial').item.json.callback_query.message.chat.id }}",
+        "text": "=Busqueda finalizada, su ticket {{ $('Extractor del Ticket1').item.json.ticketId }} no existe",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        624,
+        624
+      ],
+      "id": "7140047b-800c-46b8-97e9-96c51e539c0b",
+      "name": "Ticket Inexistente",
+      "webhookId": "7a1b15c2-d7f8-43d2-b962-dc90c5859b58",
+      "executeOnce": true,
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "try {\n  // Accedemos al objeto que sale del nodo \"Send and Wait\"\n  const item = items[0].json;\n  \n  // Extraemos el texto de la ruta correcta: item.data.text\n  const text = item.data && item.data.text ? item.data.text : \"\";\n  \n  const regex = /TKT-\\d{8}-\\d{4}/;\n  const match = text.match(regex);\n\n  return {\n    ticketId: match ? match[0] : null\n  };\n} catch (error) {\n  return { ticketId: null };\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -720,
+        624
+      ],
+      "id": "5c542328-7fa8-4e45-a0db-222eecf1de44",
+      "name": "Extractor del Ticket1"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Mensaje Inicial').item.json.callback_query.message.chat.id }}",
+        "text": "Lo sentimos, no detectamos ningún Ticket valido en su petición, por favor, vuelva a intentarlo",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -272,
+        720
+      ],
+      "id": "c46bb189-45bf-490a-99a1-0f2fd30fdf15",
+      "name": "Ticket no encontrado en el Mensaje1",
+      "webhookId": "2c145481-10ce-420b-8cca-57932856dacc",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Mensaje Inicial').item.json.callback_query.message.chat.id }}",
+        "text": "Ticket recibido correctamente, iniciando búsqueda en nuestra base de datos...",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -272,
+        528
+      ],
+      "id": "901b7fc5-e1a5-4dee-8ce2-0d231b4631c0",
+      "name": "Confirmacion estado Ticket1",
+      "webhookId": "2bafe235-90c7-430c-bcc1-6bfdde5d9d80",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "760944c1-e5bc-485a-8df2-479f75d7dbf8",
+              "leftValue": "={{ $json.ticketId}}",
+              "rightValue": 0,
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -496,
+        624
+      ],
+      "id": "b392232f-4280-4cba-b894-4fe06e62ea56",
+      "name": "VALIDACION DE TICKET1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -48,
+        528
+      ],
+      "id": "cf896c5f-0d3f-4037-8b06-7b8f580b5e4d",
+      "name": "SIMULADOR DE ESPERA1",
+      "webhookId": "78161e05-6641-4629-8c1f-829d95436dc0"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78",
+          "mode": "list",
+          "cachedResultName": "Base de datos Proyecto",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "reportes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "ticketId",
+              "lookupValue": "={{ $('Extractor del Ticket1').item.json.ticketId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        176,
+        528
+      ],
+      "id": "ee5928fd-0635-43a5-98e5-5b511489e279",
+      "name": "REVISION \"BASE DE DATOS\"1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tBqM83xZBVOMvL61",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "301237ff-0e57-46b4-85fd-c2e0d0a0121b",
+              "leftValue": "={{ $('Extractor del Ticket1').item.json.ticketId }}",
+              "rightValue": "={{ $json.ticketId }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        400,
+        528
+      ],
+      "id": "20983426-f179-410b-9cb5-3e2c7a1cbed9",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "reporte2",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1616,
+        2592
+      ],
+      "id": "c31db5d9-fc9c-4026-8bbd-f72200bd0be0",
+      "name": "Webhook2",
+      "webhookId": "3268990c-9409-480c-aef0-39633a6eef94"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Eres un experto en evaluación de riesgos operativos para una empresa de transporte público. Tu tarea es analizar los datos de un reporte de incidente y categorizar el nivel de riesgo basándote en las siguientes reglas estrictas:\n\nREGLAS DE CATEGORIZACIÓN:\n- CRÍTICO: Si hay accidente (accidente=true), emergencia (emergencia=true), altercado con pasajeros (altercado=true) o vandalismo (vandalismo=true).\n- ALTO: Si la vía está bloqueada (viabloqueada=true) o si hay una combinación de fallas (fallaMecanica=true junto con fallaElectrica=true o validadorDanado=true).\n- MEDIO: Si hay fallas mecánicas (fallaMecanica=true), fallas eléctricas (fallaElectrica=true), validador dañado (validadorDanado=true), retraso por vías (retrasovias=true) o clima adverso (clima=true), sin cumplir los criterios de Alto o Crítico.\n- BAJO: Si todos los indicadores de incidente son \"false\" y solo se trata de un reporte informativo o de observaciones menores.\n\nDATOS DEL INCIDENTE A EVALUAR:\n- Ticket ID: {{ $json.body.ticketId }}\n- Fecha de Reporte: {{ $json.body.fechaReporte }}\n- Tipo de Usuario: {{ $json.body.tipoUsuario }}\n- Nombre: {{ $json.body.nombreCompleto }}\n- ID Conductor: {{ $json.body.idConductor }}\n- Fecha y Hora del Suceso: {{ $json.body.fechaHoraSuceso }}\n- Coordenadas: {{ $json.body.coordenadasAPI }}\n- Observaciones Adicionales: {{ $json.body.observacionesAdicionales }}\n\nESTADO DE LOS INDICADORES:\n- Retraso por vías: {{ $json.body.retrasoVias }}\n- Falla Mecánica: {{ $json.body.fallaMecanica }}\n- Accidente/Colisión: {{ $json.body.accidenteColision }}\n- Altercado con Pasajero: {{ $json.body.altercadoPasajero }}\n- Vía Bloqueada: {{ $json.body.viaBloqueada }}\n- Emergencia: {{ $json.body.emergencia }}\n- Falla Eléctrica: {{ $json.body.fallaElectrica }}\n- Validador Dañado: {{ $json.body.validadorDanado }}\n- Vandalismo en Bus: {{ $json.body.vandalismoBus }}\n- Clima Adverso: {{ $json.body.climaAdverso }}\n\nINSTRUCCIONES DE SALIDA:\nAnaliza los datos aplicando las reglas y devuelve ÚNICAMENTE un objeto JSON válido (sin texto adicional, sin markdown, sin backticks) con la siguiente estructura exacta:\n{\n  \"ticketId\": \"{{ $json.body.ticketId }}\",\n  \"nivelRiesgo\": \"Bajo | Medio | Alto | Crítico\",\n  \"categoriaRiesgo\": \"Nombre de la categoría (ej. Seguridad, Mecánico, Operativo, Ambiental, Normalidad)\",\n  \"justificacion\": \"Explicación breve de 1 o 2 oraciones de por qué se asignó este nivel.\",\n  \"accionesRecomendadas\": [\"Acción 1\", \"Acción 2\"]\n}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -1168,
+        2592
+      ],
+      "id": "142c0d7e-f22c-4def-9936-43b6d12d11be",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -1152,
+        2816
+      ],
+      "id": "f412f1f3-6fdc-4b57-842d-fd3d765c2eb9",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "RdR7RXmvjLbBMD2Z",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Webhook2').item.json.body }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        -1024,
+        2816
+      ],
+      "id": "9b243404-4dc1-458a-a97c-b35ab8f45b64",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener el primer elemento del array de entrada (el nodo anterior debe entregar el JSON mostrado)\nconst inputData = $input.first().json;\n\n// Verificar que exista la propiedad \"output\" y que sea un string\nif (!inputData.output || typeof inputData.output !== 'string') {\n  throw new Error('La propiedad \"output\" no existe o no es un string válido');\n}\n\n// Parsear el string JSON interno\nlet parsedOutput;\ntry {\n  parsedOutput = JSON.parse(inputData.output);\n} catch (error) {\n  throw new Error(`Error al parsear el JSON de output: ${error.message}`);\n}\n\n// Construir el objeto final con todos los campos necesarios para los nodos siguientes\nconst processedData = {\n  // Datos principales del análisis de riesgo\n  ticketId: parsedOutput.ticketId || 'SIN_ID', // Si está vacío, asigna 'SIN_ID'\n  nivelRiesgo: parsedOutput.nivelRiesgo,\n  categoriaRiesgo: parsedOutput.categoriaRiesgo,\n  justificacion: parsedOutput.justificacion,\n  accionesRecomendadas: parsedOutput.accionesRecomendadas,\n  \n  // Campo adicional para facilitar el uso en notificaciones\n  // Convierte el array de acciones en un string separado por comas\n  acciones_texto: Array.isArray(parsedOutput.accionesRecomendadas) \n    ? parsedOutput.accionesRecomendadas.join(', ') \n    : 'No hay acciones recomendadas',\n  \n  // Indicador booleano si el riesgo es alto (útil para condicionales en n8n)\n  es_riesgo_alto: parsedOutput.nivelRiesgo === 'Alto',\n  \n  // Timestamp de procesamiento (opcional, útil para registro)\n  timestamp_procesamiento: new Date().toISOString()\n};\n\n// Devolver el objeto procesado para los nodos siguientes\nreturn [processedData];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -816,
+        2592
+      ],
+      "id": "bc6c97be-e219-4952-b4db-8482b7f35f67",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78",
+          "mode": "list",
+          "cachedResultName": "Base de datos Proyecto",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1777869441,
+          "mode": "list",
+          "cachedResultName": "repoconductor",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit#gid=1777869441"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticketid": "={{ $('Webhook2').item.json.body.ticketId }}",
+            "nivel de riesgo": "={{ $json.nivelRiesgo }}",
+            "categoriariesgo": "={{ $json.categoriaRiesgo }}",
+            "justificacion": "={{ $json.justificacion }}",
+            "acciones": "={{ $json.accionesRecomendadas[0] }}",
+            "acciones2": "={{ $json.accionesRecomendadas[1] }}",
+            "acciones3": "={{ $json.acciones_texto }}",
+            "es un riesgo": "={{ $json.es_riesgo_alto }}"
+          },
+          "matchingColumns": [
+            "ticketid"
+          ],
+          "schema": [
+            {
+              "id": "ticketid",
+              "displayName": "ticketid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nivel de riesgo",
+              "displayName": "nivel de riesgo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "categoriariesgo",
+              "displayName": "categoriariesgo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "justificacion",
+              "displayName": "justificacion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "acciones",
+              "displayName": "acciones",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "acciones2",
+              "displayName": "acciones2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "acciones3",
+              "displayName": "acciones3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "es un riesgo",
+              "displayName": "es un riesgo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -592,
+        2592
+      ],
+      "id": "90d59fa2-86c0-4b41-808e-953aee0d2b9e",
+      "name": "Append or update row in sheet3",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KyhHVBX2U9MQVD17",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78",
+          "mode": "list",
+          "cachedResultName": "Base de datos Proyecto",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2010854392,
+          "mode": "list",
+          "cachedResultName": "conductor",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u7uj-IGFI5EIN5ayVBSXgiqsDzHiibhfLUtHV-wNl78/edit#gid=2010854392"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticktetid": "={{ $json.body.ticketId }}",
+            "fechaReporte": "={{ $json.body.fechaReporte }}",
+            "tipoUsuario": "={{ $json.body.tipoUsuario }}",
+            "nombre": "={{ $json.body.nombreCompleto }}",
+            "idConductor": "={{ $json.body.idConductor }}",
+            "fechaHora": "={{ $json.body.fechaHoraSuceso }}",
+            "coordenadas": "={{ $json.body.coordenadasAPI }}",
+            "observaciones": "={{ $json.body.observacionesAdicionales }}",
+            "retrasovias": "={{ $json.body.retrasoVias }}",
+            "fallasMecanicas": "={{ $json.body.fallaMecanica }}",
+            "accidente": "={{ $json.body.accidenteColision }}",
+            "altercado": "={{ $json.body.altercadoPasajero }}",
+            "viabloqueada": "={{ $json.body.viaBloqueada }}",
+            "emergencia": "={{ $json.body.viaBloqueada }}",
+            "fallaelectrica": "={{ $json.body.fallaElectrica }}",
+            "validadordañado": "={{ $json.body.validadorDanado }}",
+            "vandalismo": "={{ $json.body.vandalismoBus }}",
+            "clima": "={{ $json.body.climaAdverso }}"
+          },
+          "matchingColumns": [
+            "ticktetid"
+          ],
+          "schema": [
+            {
+              "id": "ticktetid",
+              "displayName": "ticktetid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "fechaReporte",
+              "displayName": "fechaReporte",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "tipoUsuario",
+              "displayName": "tipoUsuario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre",
+              "displayName": "nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "idConductor",
+              "displayName": "idConductor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "fechaHora",
+              "displayName": "fechaHora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "coordenadas",
+              "displayName": "coordenadas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "observaciones",
+              "displayName": "observaciones",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "retrasovias",
+              "displayName": "retrasovias",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "fallasMecanicas",
+              "displayName": "fallasMecanicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "accidente",
+              "displayName": "accidente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "altercado",
+              "displayName": "altercado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "viabloqueada",
+              "displayName": "viabloqueada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "emergencia",
+              "displayName": "emergencia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "fallaelectrica",
+              "displayName": "fallaelectrica",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "validadordañado",
+              "displayName": "validadordañado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "vandalismo",
+              "displayName": "vandalismo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "clima",
+              "displayName": "clima",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1392,
+        2592
+      ],
+      "id": "a1b94a20-d6d0-4880-99db-6df8347638f5",
+      "name": "Append or update row in sheet4",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KyhHVBX2U9MQVD17",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json['nivel de riesgo'] }}",
+                    "rightValue": "Bajo",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "cc316c1c-6b1a-40d5-a968-a85b63f3500a"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "1832b3f4-c1dc-41e5-bd3c-92619c2d23c2",
+                    "leftValue": "={{ $json['nivel de riesgo'] }}",
+                    "rightValue": "Medio",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "872e06e4-4ed3-4203-9fe9-f0011af96091",
+                    "leftValue": "={{ $json['nivel de riesgo'] }}",
+                    "rightValue": "Alto",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "4efaec91-2e27-41e0-a928-a658cf28dfa0",
+                    "leftValue": "={{ $json['nivel de riesgo'] }}",
+                    "rightValue": "Crítico",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -368,
+        2560
+      ],
+      "id": "e6ec72c8-ecdd-4009-9855-397d5d43c02e",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "chatId": "6620088789",
+        "text": "=debe desplazarse a la zona  {{ $('Webhook2').item.json.body.coordenadasAPI }} para revisar el reporte asociado al ticket {{ $('Append or update row in sheet3').item.json.ticketid }} con un riesgo {{ $('Append or update row in sheet3').item.json['nivel de riesgo'] }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -144,
+        2304
+      ],
+      "id": "3ca7464a-1599-459c-abf5-9b2b7fc92d29",
+      "name": "Send a text message",
+      "webhookId": "15ed701c-7611-4259-aeb5-f18b83e2caa5",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6620088789",
+        "text": "=debe desplazarse a la zona  {{ $('Webhook2').item.json.body.coordenadasAPI }} para revisar el reporte asociado al ticket {{ $('Append or update row in sheet3').item.json.ticketid }} con un riesgo {{ $('Append or update row in sheet3').item.json['nivel de riesgo'] }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -144,
+        2496
+      ],
+      "id": "f3fd4d00-3334-41f9-ae59-0ea9eef9aab3",
+      "name": "Send a text message1",
+      "webhookId": "15ed701c-7611-4259-aeb5-f18b83e2caa5",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6620088789",
+        "text": "=debe desplazarse a la zona  {{ $('Webhook2').item.json.body.coordenadasAPI }} para revisar el reporte asociado al ticket {{ $('Append or update row in sheet3').item.json.ticketid }} con un riesgo {{ $('Append or update row in sheet3').item.json['nivel de riesgo'] }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -144,
+        2688
+      ],
+      "id": "23bd1479-413f-42bf-9bd6-a2cba6dcf1b3",
+      "name": "Send a text message2",
+      "webhookId": "15ed701c-7611-4259-aeb5-f18b83e2caa5",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6620088789",
+        "text": "=debe desplazarse a la zona  {{ $('Webhook2').item.json.body.coordenadasAPI }} para revisar el reporte asociado al ticket {{ $('Append or update row in sheet3').item.json.ticketid }} con un riesgo {{ $('Append or update row in sheet3').item.json['nivel de riesgo'] }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -144,
+        2880
+      ],
+      "id": "30223887-ce86-4731-92ee-44eb22d34c57",
+      "name": "Send a text message3",
+      "webhookId": "15ed701c-7611-4259-aeb5-f18b83e2caa5",
+      "credentials": {
+        "telegramApi": {
+          "id": "kMDb9b7LoKyLJhzX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "615f4e93-34a5-4e7b-8c5d-587281dc7a77",
+              "leftValue": "={{ $json.callback_query !== undefined }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -1808,
+        688
+      ],
+      "id": "be538353-5ed9-4d4d-9620-4aa064f58ea7",
+      "name": "If"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Analyze an image1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        []
+      ]
+    },
+    "Append or update row in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Respuesta tecnica.",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reporte unidad tecnica": {
+      "main": [
+        [
+          {
+            "node": "Respuesta a usuario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reporte unidad tecnica1": {
+      "main": [
+        [
+          {
+            "node": "Respuesta a usuario1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reporte unidad tecnica2": {
+      "main": [
+        [
+          {
+            "node": "Respuesta a usuario2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respuesta tecnica.": {
+      "main": [
+        [
+          {
+            "node": "Reporte unidad tecnica",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reporte unidad tecnica1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reporte unidad tecnica2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Formatear Datos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Formatear Datos": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get row(s) in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "analize image",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "analize image": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze an image1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respuesta a usuario2": {
+      "main": [
+        []
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "analize image",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Append or update row in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mensaje Inicial": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Reporte Ciudadano",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reporte Conductor",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Consulta Ticket",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consulta Ticket": {
+      "main": [
+        [
+          {
+            "node": "Extractor del Ticket1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extractor del Ticket1": {
+      "main": [
+        [
+          {
+            "node": "VALIDACION DE TICKET1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirmacion estado Ticket1": {
+      "main": [
+        [
+          {
+            "node": "SIMULADOR DE ESPERA1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "VALIDACION DE TICKET1": {
+      "main": [
+        [
+          {
+            "node": "Confirmacion estado Ticket1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ticket no encontrado en el Mensaje1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SIMULADOR DE ESPERA1": {
+      "main": [
+        [
+          {
+            "node": "REVISION \"BASE DE DATOS\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "REVISION \"BASE DE DATOS\"1": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Ticket Confirmado",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ticket Inexistente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook2": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet3": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet4": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Opciones Bot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "9fdc8f0d-9aeb-47ed-b8ff-04af1cd8bac2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "efdb3f2646011ddd34e8f1877ff51ff8ecbe62e2a830781ad6a76c00a76feb2d"
+  },
+  "nodeGroups": [],
+  "id": "GbYE1HA8Tr8b2VFM",
+  "tags": []
+}
